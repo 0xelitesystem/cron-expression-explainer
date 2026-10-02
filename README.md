@@ -14,13 +14,37 @@ Schedulers vary in their extensions, so the reading is for the standard five-fie
 
 A perpetual almanac: a parchment page with a gold rule, a moon-phase crest, a serif title, and the expression read out like an entry in an old calendar.
 
+## Use
+
+1. Paste or type a five-field cron expression (minute, hour, day of month, month, day of week).
+2. Read the field-by-field explanation and the one-sentence summary of when the job runs.
+3. Fix anything flagged: an invalid field or the wrong number of fields is called out.
+4. Or click one of the quick-fill chips, such as "Every 5 minutes", to load a common schedule.
+
+## Why this exists
+
+Cron expressions are compact enough that a misplaced star or step can schedule a job hourly instead of daily, and nobody reads `30 9 * * 1-5` fluently. This tool spells the schedule out in plain English before you deploy it. It is a single HTML file with no tracking and no network calls, and it is MIT licensed.
+
 ## Privacy
 
 Everything runs in your browser. Nothing you type is sent anywhere, stored, or saved. Closing the tab clears it.
 
-## Use it
+## Run locally
 
 Open `index.html` in any modern browser, or host it as a static page. No build step, no dependencies, no network calls.
+
+To get your own copy:
+
+```
+git clone https://github.com/0xelitesystem/cron-expression-explainer
+cd cron-expression-explainer
+```
+
+Then open `index.html` directly, or serve the folder with `python -m http.server` and visit http://localhost:8000/.
+
+## Build
+
+No build step. The whole tool is one `index.html` file with inline CSS and JavaScript, and there is nothing to install or compile.
 
 ## More
 
